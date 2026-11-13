@@ -27,22 +27,22 @@ Replace <node or pod> with the type of resource you want to query (e.g., node or
 **Example of usage**
 ```
 $ kubeplugin pods kube-system
-Resource        Namespace       Name                                          CPU        Memory    
-pods            kube-system     coredns-559f6c778d-t6cl2                      3m         42Mi      
-pods            kube-system     coredns-559f6c778d-z9kw9                      3m         40Mi      
-pods            kube-system     etcd-kind-control-plane                       39m        80Mi      
-pods            kube-system     kindnet-wv6kx                                 1m         46Mi      
-pods            kube-system     kube-apiserver-kind-control-plane             75m        310Mi     
-pods            kube-system     kube-controller-manager-kind-control-plane    40m        115Mi     
-pods            kube-system     kube-proxy-t2lwr                              2m         55Mi      
-pods            kube-system     kube-scheduler-kind-control-plane             15m        68Mi      
-pods            kube-system     metrics-server-5d64fb4897-h6k45               3m         17Mi      
+Resource     Namespace       Name                                          CPU        Memory
+pods         kube-system     coredns-559f6c778d-t6cl2                      3m         42Mi  
+pods         kube-system     coredns-559f6c778d-z9kw9                      3m         40Mi  
+pods         kube-system     etcd-kind-control-plane                       39m        80Mi  
+pods         kube-system     kindnet-wv6kx                                 1m         46Mi  
+pods         kube-system     kube-apiserver-kind-control-plane             75m        310Mi 
+pods         kube-system     kube-controller-manager-kind-control-plane    40m        115Mi 
+pods         kube-system     kube-proxy-t2lwr                              2m         55Mi  
+pods         kube-system     kube-scheduler-kind-control-plane             15m        68Mi  
+pods         kube-system     metrics-server-5d64fb4897-h6k45               3m         17Mi  
 
 ```
 
 ```
 $ kubeplugin node kube-system
-Resource        Namespace       Name                                          CPU        Memory    
-node            kube-system     kind-control-plane                            291m       3%    
+Resource     Namespace       Name                                          CPU        Memory
+node         kube-system     kind-control-plane                            291m       3%    
 
 ```
