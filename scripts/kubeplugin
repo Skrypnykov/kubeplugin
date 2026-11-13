@@ -1,0 +1,27 @@
+#!/bin/bash
+
+# Define command-line arguments
+RESOURCE_TYPE=$1
+NAMESPACE=$2
+
+# Check if resource type and namespace are provided
+if [ -z "$RESOURCE_TYPE" ] || [ -z "$NAMESPACE" ]; then
+    echo "Usage: kubeplugin [nodes|pods] [namespace]"
+    exit 1
+fi
+
+# Output table headers and underline
+FORMAT="%-15s %-15s %-45s %-10s %-10s\n"
+printf "$FORMAT" "Resource" "Namespace" "Name" "CPU" "Memory"
+
+# Retrieve resource usage statistics from Kubernetes (command 'top' is hardcoded)
+kubectl top "$RESOURCE_TYPE" -n "$NAMESPACE" | tail -n +2 | while read -r line
+do
+  # Extract CPU and memory usage from the output
+  NAME=$(echo "$line" | awk '{print $1}')
+  CPU=$(echo "$line" | awk '{print $2}')
+  MEMORY=$(echo "$line" | awk '{print $3}')
+
+  # Output the statistics to the console
+  printf "$FORMAT" "$RESOURCE_TYPE" "$NAMESPACE" "$NAME" "$CPU" "$MEMORY"
+done
