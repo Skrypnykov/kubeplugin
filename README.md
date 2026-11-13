@@ -14,7 +14,7 @@ cd kubeplugin/scripts
 ```
 chmod +x kubeplugin
 ```
-4. **Move the script to the directory where other kubectl plugins are located.** (For example, on Unix-like systems, it might be /usr/local/bin/)
+4. **Move the script to the directory where other kubectl plugins are located.** (For example, it might be /usr/local/bin/)
 ```
 sudo mv kubeplugin /usr/local/bin/
 ```
